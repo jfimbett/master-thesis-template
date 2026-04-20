@@ -340,6 +340,154 @@
       display: inline-block;
     }
     .bottom-note code { font-size: 0.9em; }
+
+    /* ── Pipeline diagram (slide 12) ────────────────────────────── */
+    .pipeline {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0;
+      flex-wrap: nowrap;
+      margin: 0.8em auto;
+    }
+    .pipeline-box {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 0.6em 0.9em;
+      font-family: 'Fira Code', monospace;
+      font-size: 0.5em;
+      color: var(--muted);
+      text-align: center;
+      line-height: 1.5;
+      min-width: 120px;
+    }
+    .pipeline-box.output {
+      border-color: var(--green);
+      color: var(--green);
+      font-weight: 600;
+    }
+    .pipeline-arrow {
+      color: var(--accent);
+      font-size: 1.2em;
+      padding: 0 0.3em;
+      flex-shrink: 0;
+    }
+
+    /* ── Numbered step layout (slide 13) ────────────────────────── */
+    .num-steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin-top: 0.8rem;
+    }
+    .num-step {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1em 1.2em;
+    }
+    .num-step-label {
+      font-size: 0.52em;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--accent);
+      margin-bottom: 0.5em;
+    }
+
+    /* ── First-day layout (slide 5) ─────────────────────────────── */
+    .first-day-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin-top: 0.8rem;
+      align-items: start;
+    }
+    .first-day-list {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1em 1.4em;
+    }
+    .first-day-list ol {
+      padding-left: 1.2em;
+      margin: 0;
+    }
+    .first-day-list ol li {
+      font-size: 0.58em;
+      color: var(--muted);
+      padding: 0.2em 0;
+      line-height: 1.4;
+    }
+    .first-day-list ol li::before { display: none; }
+    .first-day-cards {
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+    .first-day-card {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--accent);
+      border-radius: 8px;
+      padding: 0.55em 0.75em;
+    }
+    .first-day-card .fdc-file {
+      font-family: 'Fira Code', monospace;
+      color: var(--accent);
+      font-size: 0.58em;
+      font-weight: 500;
+    }
+    .first-day-card .fdc-desc {
+      color: var(--muted);
+      font-size: 0.52em;
+      line-height: 1.4;
+      margin-top: 0.2em;
+    }
+
+    /* ── Integrity rules (slide 19) ─────────────────────────────── */
+    .integrity-rule {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.8em;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,200,50,0.2);
+      border-radius: 10px;
+      padding: 0.8em 1.1em;
+      margin-bottom: 0.6rem;
+    }
+    .integrity-icon { font-size: 1em; flex-shrink: 0; margin-top: 0.1em; }
+    .integrity-title { color: #e6d87a; font-weight: 700; font-size: 0.7em; }
+    .integrity-desc  { color: #c5b97a; font-size: 0.58em; line-height: 1.5; margin-top: 0.2em; }
+
+    /* ── Phase layout (defense prep slide 16) ───────────────────── */
+    .phase-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin-top: 0.8rem;
+    }
+    .phase-card {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-top: 4px solid var(--accent);
+      border-radius: 10px;
+      padding: 1em 1.2em;
+    }
+    .phase-card:last-child { border-top-color: var(--accent2); }
+    .phase-cmd {
+      font-family: 'Fira Code', monospace;
+      font-size: 0.72em;
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: 0.5em;
+    }
+    .phase-card:last-child .phase-cmd { color: var(--accent2); }
+    .phase-items { list-style: none; padding: 0; margin: 0; }
+    .phase-items li { font-size: 0.56em; color: var(--muted); padding: 0.2em 0; line-height: 1.4; }
+    .phase-items li::before { content: "→ "; color: var(--accent); }
+    .phase-card:last-child .phase-items li::before { color: var(--accent2); }
   </style>
 </head>
 
@@ -435,7 +583,98 @@ pandoc/          →  LaTeX template + metadata
   </section>
 
   <!-- ─────────────────────────────────────────────────────────────
-       SLIDE 5 — Skills
+       SLIDE 5 — Your First Day (NEW)
+  ───────────────────────────────────────────────────────────────── -->
+  <section data-auto-animate>
+    <h2>Day 1: <code>/interview</code> sets everything up</h2>
+    <div class="first-day-grid">
+      <div class="first-day-list">
+        <h3 style="font-size:0.7em; margin-bottom:0.6em;">The 9 questions</h3>
+        <ol>
+          <li>Full name and program</li>
+          <li>University and department</li>
+          <li>Supervisor name (optional)</li>
+          <li>Thesis topic or working title</li>
+          <li>Core research question in your own words</li>
+          <li>Data you have or plan to use</li>
+          <li>Methodology you expect to apply</li>
+          <li>Programming experience: beginner / intermediate / advanced</li>
+          <li>Any language beyond Python?</li>
+        </ol>
+      </div>
+      <div class="first-day-cards">
+        <h3 style="font-size:0.7em; margin-bottom:0.4em;">What gets created</h3>
+        <div class="first-day-card">
+          <div class="fdc-file">📄 docs/student-profile.md</div>
+          <div class="fdc-desc">Your context, baked into every AI response</div>
+        </div>
+        <div class="first-day-card">
+          <div class="fdc-file">📋 docs/proposal.md</div>
+          <div class="fdc-desc">A structured concept note you can show your supervisor</div>
+        </div>
+        <div class="first-day-card">
+          <div class="fdc-file">⚙️ CLAUDE.md</div>
+          <div class="fdc-desc">Rewritten with your field, topic, and coding level</div>
+        </div>
+      </div>
+    </div>
+    <div style="text-align:center; margin-top:0.8em;">
+      <span class="bottom-note">Run once. Every skill reads this forever.</span>
+    </div>
+    <aside class="notes">The interview takes about five minutes. After it runs, every subsequent command is aware of the student's topic, data, and experience level — no repetition needed.</aside>
+  </section>
+
+  <!-- ─────────────────────────────────────────────────────────────
+       SLIDE 6 — The Writing Experience (NEW)
+  ───────────────────────────────────────────────────────────────── -->
+  <section data-auto-animate>
+    <h2>How <code>/write-section</code> actually works</h2>
+    <div class="cols three" style="margin-top:0.6em; gap:0.8rem; align-items:start;">
+      <div class="col-box" style="border-top:3px solid var(--accent);">
+        <h3 style="font-size:0.65em; margin-bottom:0.4em;">You provide</h3>
+        <pre style="margin:0; box-shadow:none;"><code class="language-plaintext" style="font-size:0.58em; line-height:1.5; padding:0.8em;">/write-section Introduction
+
+- Topic: ESG ratings and
+  stock returns
+- Gap: rating disagreement
+  ignored
+- RQ: does disagreement
+  predict alpha?
+- Data: MSCI + Bloomberg,
+  2010–2023
+- Method: Fama-MacBeth
+  regression</code></pre>
+      </div>
+      <div class="col-box" style="border-top:3px solid var(--accent2);">
+        <h3 style="font-size:0.65em; margin-bottom:0.4em;">Claude reads</h3>
+        <ul style="margin-top:0.3em;">
+          <li style="font-size:0.56em; padding:0.25em 0;">Your student profile</li>
+          <li style="font-size:0.56em; padding:0.25em 0;">Your notes above</li>
+          <li style="font-size:0.56em; padding:0.25em 0;">Academic tone rules</li>
+          <li style="font-size:0.56em; padding:0.25em 0;">No invented citations</li>
+        </ul>
+      </div>
+      <div class="col-box" style="border-top:3px solid var(--green);">
+        <h3 style="font-size:0.65em; margin-bottom:0.4em;">You get</h3>
+        <pre style="margin:0; box-shadow:none;"><code class="language-markdown" style="font-size:0.55em; line-height:1.5; padding:0.8em;">## Introduction
+
+The relationship between
+environmental, social, and
+governance (ESG) ratings and
+equity returns has attracted
+considerable attention
+[@Berg2022]. However,
+existing work tends to...</code></pre>
+      </div>
+    </div>
+    <div style="text-align:center; margin-top:0.7em;">
+      <span class="bottom-note">Your ideas. Claude's prose. You review every word.</span>
+    </div>
+    <aside class="notes">The key point: Claude drafts from what the student supplies. Empty notes produce empty drafts. The quality of the output reflects the quality of the input.</aside>
+  </section>
+
+  <!-- ─────────────────────────────────────────────────────────────
+       SLIDE 7 — Skills (was slide 5)
   ───────────────────────────────────────────────────────────────── -->
   <section data-auto-animate>
     <h2>Skills: type <code>/name</code>, get results</h2>
@@ -492,7 +731,49 @@ pandoc/          →  LaTeX template + metadata
   </section>
 
   <!-- ─────────────────────────────────────────────────────────────
-       SLIDE 6 — Agents
+       SLIDE 8 — The Empirical Toolkit (NEW)
+  ───────────────────────────────────────────────────────────────── -->
+  <section data-auto-animate>
+    <h2>For quantitative theses: two key skills</h2>
+    <div class="cols" style="margin-top:0.6em; gap:1.5rem;">
+      <div class="col-box" style="border-top:4px solid var(--accent);">
+        <h3 style="font-size:0.75em; margin-bottom:0.5em;">Design your strategy</h3>
+        <p style="font-family:'Fira Code',monospace; font-size:0.58em; color:var(--accent); margin-bottom:0.5em;">/empirical-design</p>
+        <ul style="margin-top:0.3em;">
+          <li style="font-size:0.55em; padding:0.2em 0;">Defines your dependent + independent variables</li>
+          <li style="font-size:0.55em; padding:0.2em 0;">Writes your baseline regression in LaTeX</li>
+          <li style="font-size:0.55em; padding:0.2em 0;">Flags identification concerns</li>
+          <li style="font-size:0.55em; padding:0.2em 0;">Suggests robustness checks</li>
+          <li style="font-size:0.55em; padding:0.2em 0;">Produces expected tables and figures list</li>
+          <li style="font-size:0.55em; padding:0.2em 0;">Gives an interpretation guide</li>
+        </ul>
+        <div style="margin-top:0.7em;">
+          <span class="pill">Run before you touch any data</span>
+        </div>
+      </div>
+      <div class="col-box" style="border-top:4px solid var(--accent2);">
+        <h3 style="font-size:0.75em; margin-bottom:0.5em;">Understand your data</h3>
+        <p style="font-family:'Fira Code',monospace; font-size:0.58em; color:var(--accent2); margin-bottom:0.5em;">/data-explorer</p>
+        <ul style="margin-top:0.3em;">
+          <li style="font-size:0.55em; padding:0.2em 0;">Schema: column names, types, missing value counts</li>
+          <li style="font-size:0.55em; padding:0.2em 0;">Data quality flags: duplicates, outliers, implausible values</li>
+          <li style="font-size:0.55em; padding:0.2em 0;">Suggested summary statistics for thesis section</li>
+          <li style="font-size:0.55em; padding:0.2em 0;">Python code stub you can paste into your analysis script</li>
+          <li style="font-size:0.55em; padding:0.2em 0;">Connection to your research question</li>
+        </ul>
+        <div style="margin-top:0.5em;">
+          <code style="font-size:0.54em;">/data-explorer data/clean/firm_panel.csv</code>
+        </div>
+        <div style="margin-top:0.5em;">
+          <span class="pill" style="color:var(--accent2); border-color:var(--accent2);">Run when data/clean/ has your processed file</span>
+        </div>
+      </div>
+    </div>
+    <aside class="notes">These two skills are the entry points for any quantitative chapter. Empirical-design runs before data work; data-explorer runs once the clean dataset exists.</aside>
+  </section>
+
+  <!-- ─────────────────────────────────────────────────────────────
+       SLIDE 9 — Agents (was slide 6)
   ───────────────────────────────────────────────────────────────── -->
   <section data-auto-animate>
     <h2>Agents: specialists you can call in</h2>
@@ -522,7 +803,7 @@ pandoc/          →  LaTeX template + metadata
   </section>
 
   <!-- ─────────────────────────────────────────────────────────────
-       SLIDE 7 — Hooks
+       SLIDE 10 — Hooks (was slide 7)
   ───────────────────────────────────────────────────────────────── -->
   <section data-auto-animate>
     <h2>Hooks: rules that run automatically</h2>
@@ -555,7 +836,7 @@ pandoc/          →  LaTeX template + metadata
   </section>
 
   <!-- ─────────────────────────────────────────────────────────────
-       SLIDE 8 — Git
+       SLIDE 11 — Git (was slide 8)
   ───────────────────────────────────────────────────────────────── -->
   <section data-auto-animate>
     <h2>Git: never lose a word</h2>
@@ -608,7 +889,89 @@ git push                  # back up to GitHub</code></pre>
   </section>
 
   <!-- ─────────────────────────────────────────────────────────────
-       SLIDE 9 — Daily workflow
+       SLIDE 12 — The Pandoc Pipeline (NEW)
+  ───────────────────────────────────────────────────────────────── -->
+  <section data-auto-animate>
+    <h2>Markdown → PDF: no LaTeX required</h2>
+    <div style="margin-top:0.8em;">
+      <div class="pipeline">
+        <div class="pipeline-box">
+          thesis/00_abstract.md<br/>
+          thesis/01_introduction.md<br/>
+          <span style="color:var(--muted);">... (10 files)</span>
+        </div>
+        <div class="pipeline-arrow">→</div>
+        <div class="pipeline-box">
+          pandoc/thesis.yaml<br/>
+          <span style="color:var(--muted); font-size:0.9em;">(title, author, supervisor…)</span>
+        </div>
+        <div class="pipeline-arrow">→</div>
+        <div class="pipeline-box">
+          pandoc/template.latex<br/>
+          <span style="color:var(--muted); font-size:0.9em;">(layout, fonts, margins)</span>
+        </div>
+        <div class="pipeline-arrow">→</div>
+        <div class="pipeline-box">
+          docs/references.bib<br/>
+          <span style="color:var(--muted); font-size:0.9em;">(your bibliography)</span>
+        </div>
+        <div class="pipeline-arrow">→</div>
+        <div class="pipeline-box output">
+          output/thesis.pdf ✓
+        </div>
+      </div>
+    </div>
+    <p style="font-size:0.55em; color:var(--muted); margin-top:0.4em;">You write Markdown. Pandoc handles the rest.</p>
+    <div class="cols" style="gap:1rem; margin-top:0.6em; align-items:center;">
+      <div style="text-align:right;">
+        <pre style="display:inline-block; margin:0;"><code class="language-bash" style="font-size:0.75em; padding:0.6em 1.2em;">/compile</code></pre>
+      </div>
+      <div>
+        <p style="font-size:0.65em; color:var(--muted); margin:0;">That's it. One command.</p>
+      </div>
+    </div>
+    <aside class="notes">Students write plain text files. The compile skill orchestrates Pandoc, handles bibliography sorting, and deposits a formatted PDF in output/. No manual LaTeX editing needed.</aside>
+  </section>
+
+  <!-- ─────────────────────────────────────────────────────────────
+       SLIDE 13 — Reference Management (NEW)
+  ───────────────────────────────────────────────────────────────── -->
+  <section data-auto-animate>
+    <h2>Citations that actually work</h2>
+    <div class="num-steps">
+      <div class="num-step">
+        <div class="num-step-label">Step 1 — Write in Markdown</div>
+        <pre style="margin:0; box-shadow:none;"><code class="language-markdown" style="font-size:0.6em; padding:0.8em; line-height:1.5;">Recent work suggests a
+positive relationship
+[@Fama1993; @Berg2022].</code></pre>
+      </div>
+      <div class="num-step">
+        <div class="num-step-label">Step 2 — Add to references.bib</div>
+        <pre style="margin:0; box-shadow:none;"><code class="language-plaintext" style="font-size:0.56em; padding:0.8em; line-height:1.5;">@article{Fama1993,
+  author = {Fama, Eugene F.},
+  title  = {Common risk
+            factors...},
+  year   = {1993},
+  ...
+}</code></pre>
+      </div>
+      <div class="num-step">
+        <div class="num-step-label">Step 3 — Run /validate-references</div>
+        <div style="font-size:0.56em; line-height:1.7; margin-top:0.4em;">
+          <div style="color:var(--green);">✓ Confirmed via Semantic Scholar: 14 references</div>
+          <div style="color:var(--yellow);">⚠ Unverified (check manually): 2 references</div>
+          <div style="color:var(--red);">✗ Key in text but missing from .bib: 1 reference</div>
+        </div>
+      </div>
+    </div>
+    <div style="text-align:center; margin-top:0.9em;">
+      <span class="bottom-note">Never cite a paper you haven't read. <code>/validate-references</code> catches errors, not ethics.</span>
+    </div>
+    <aside class="notes">The validate-references skill checks every citation key against the .bib file and then attempts verification via Semantic Scholar. It reports but does not fix — the student must resolve each issue.</aside>
+  </section>
+
+  <!-- ─────────────────────────────────────────────────────────────
+       SLIDE 14 — Daily workflow (was slide 9)
   ───────────────────────────────────────────────────────────────── -->
   <section data-auto-animate>
     <h2>A day in the life</h2>
@@ -651,7 +1014,79 @@ git push                  # back up to GitHub</code></pre>
   </section>
 
   <!-- ─────────────────────────────────────────────────────────────
-       SLIDE 10 — The contract
+       SLIDE 15 — Before Your Advisor Meeting (NEW)
+  ───────────────────────────────────────────────────────────────── -->
+  <section data-auto-animate>
+    <h2>Before every meeting: two commands</h2>
+    <div class="cols" style="margin-top:0.6em; gap:1.5rem;">
+      <div class="col-box" style="border-top:4px solid var(--accent);">
+        <h3 style="font-size:0.72em; margin-bottom:0.5em;">1. Push your work</h3>
+        <pre style="margin:0; box-shadow:none;"><code class="language-bash" style="font-size:0.64em; padding:0.9em;">git add thesis/
+git commit -m "update methodology draft"
+git push</code></pre>
+        <p style="font-size:0.56em; color:var(--muted); margin-top:0.5em; margin-bottom:0;">Your advisor can see your files on GitHub</p>
+      </div>
+      <div class="col-box" style="border-top:4px solid var(--accent2);">
+        <h3 style="font-size:0.72em; margin-bottom:0.5em;">2. Generate a progress report</h3>
+        <p style="font-family:'Fira Code',monospace; font-size:0.6em; color:var(--accent2); margin-bottom:0.5em;">/advisor-report 2026-03-15</p>
+        <ul style="margin-bottom:0.5em;">
+          <li style="font-size:0.52em; padding:0.2em 0;">Reads your git history since the date</li>
+          <li style="font-size:0.52em; padding:0.2em 0;">Reads all 10 thesis sections</li>
+          <li style="font-size:0.52em; padding:0.2em 0;">Classifies each as substantive or empty</li>
+          <li style="font-size:0.52em; padding:0.2em 0;">Writes an email-ready report to docs/advisor-report.md</li>
+        </ul>
+        <pre style="margin:0; box-shadow:none;"><code class="language-plaintext" style="font-size:0.52em; padding:0.7em; line-height:1.5;">Subject: Thesis Progress Update — Jana Smith
+
+Dear Prof. Müller,
+
+Since our last meeting on 2026-03-15,
+I have made the following progress...</code></pre>
+      </div>
+    </div>
+    <div style="text-align:center; margin-top:0.7em;">
+      <span class="bottom-note">Review before sending. It reflects only what's actually written.</span>
+    </div>
+    <aside class="notes">The advisor-report skill is intentionally evidence-based: it only reports on sections that contain real content, not placeholders. Students should review it before forwarding.</aside>
+  </section>
+
+  <!-- ─────────────────────────────────────────────────────────────
+       SLIDE 16 — Defense Prep (NEW)
+  ───────────────────────────────────────────────────────────────── -->
+  <section data-auto-animate>
+    <h2>Getting ready to defend</h2>
+    <div class="phase-grid">
+      <div class="phase-card">
+        <div class="phase-cmd">/adversarial-reviewer</div>
+        <p style="font-size:0.58em; color:var(--muted); margin-bottom:0.5em; font-weight:600;">Stress-test your thesis</p>
+        <ul class="phase-items">
+          <li>Simulates a tough examiner</li>
+          <li>Raises the 5 hardest questions your thesis invites</li>
+          <li>Flags specific overclaiming sentences</li>
+          <li>Gives you time to prepare answers before the real thing</li>
+        </ul>
+        <blockquote style="margin-top:0.6em; font-size:0.52em;">
+          "Your identification strategy relies on the assumption that [X]. What evidence do you have that this holds in your sample?"
+        </blockquote>
+      </div>
+      <div class="phase-card">
+        <div class="phase-cmd">/defense-slides</div>
+        <p style="font-size:0.58em; color:var(--muted); margin-bottom:0.5em; font-weight:600;">Build your slides</p>
+        <ul class="phase-items">
+          <li>Reads all 10 thesis sections</li>
+          <li>Generates a 16-slide Beamer presentation</li>
+          <li>Populated with your actual content</li>
+          <li>Compiles to output/defense.pdf</li>
+        </ul>
+      </div>
+    </div>
+    <div style="text-align:center; margin-top:0.8em;">
+      <span class="bottom-note">You still practice. But you start from something real.</span>
+    </div>
+    <aside class="notes">These two skills are designed to be run together in the final weeks. The adversarial reviewer finds the gaps; the defense slides give the student a starting deck to iterate on.</aside>
+  </section>
+
+  <!-- ─────────────────────────────────────────────────────────────
+       SLIDE 17 — The contract (was slide 10)
   ───────────────────────────────────────────────────────────────── -->
   <section data-auto-animate>
     <h2>The contract</h2>
@@ -680,7 +1115,7 @@ git push                  # back up to GitHub</code></pre>
   </section>
 
   <!-- ─────────────────────────────────────────────────────────────
-       SLIDE 11 — Going deeper
+       SLIDE 18 — Going deeper (was slide 11)
   ───────────────────────────────────────────────────────────────── -->
   <section data-auto-animate>
     <h2>Going deeper</h2>
@@ -717,7 +1152,43 @@ git push                  # back up to GitHub</code></pre>
   </section>
 
   <!-- ─────────────────────────────────────────────────────────────
-       SLIDE 12 — Final
+       SLIDE 19 — Academic Integrity (NEW)
+  ───────────────────────────────────────────────────────────────── -->
+  <section data-auto-animate data-background-color="#1a1200">
+    <h2 style="color:#e6d87a;">AI + integrity: the line is clear</h2>
+    <div style="margin-top:0.7em;">
+      <div class="integrity-rule">
+        <div class="integrity-icon">🔵</div>
+        <div>
+          <div class="integrity-title">Your thinking is the thesis</div>
+          <div class="integrity-desc">Claude drafts from your notes. If the notes are empty, the draft is empty. The ideas must be yours.</div>
+        </div>
+      </div>
+      <div class="integrity-rule">
+        <div class="integrity-icon">🔵</div>
+        <div>
+          <div class="integrity-title">Every citation must be real</div>
+          <div class="integrity-desc">Claude will never invent a paper. <code style="background:rgba(255,255,255,0.08); color:#e6d87a;">/validate-references</code> checks against Semantic Scholar. If a citation isn't in your .bib, it won't compile. You are still responsible for reading what you cite.</div>
+        </div>
+      </div>
+      <div class="integrity-rule">
+        <div class="integrity-icon">🔵</div>
+        <div>
+          <div class="integrity-title">Disclose how you used AI</div>
+          <div class="integrity-desc">Many programs now require an AI use statement. Ask your supervisor. The log at <code style="background:rgba(255,255,255,0.08); color:#e6d87a;">.claude/logs/activity.log</code> is your audit trail.</div>
+        </div>
+      </div>
+    </div>
+    <div style="text-align:center; margin-top:0.8em;">
+      <span class="bottom-note" style="background:rgba(255,255,255,0.05); border-color:rgba(255,200,50,0.25); color:#c5b97a;">
+        Using AI to write faster is fine. Using AI to think for you is not.
+      </span>
+    </div>
+    <aside class="notes">This slide addresses the question every student is thinking but not asking. Be direct: the audit log exists, disclosure requirements are growing, and there is no AI shortcut that replaces understanding your own research.</aside>
+  </section>
+
+  <!-- ─────────────────────────────────────────────────────────────
+       SLIDE 20 — Final (was slide 12)
   ───────────────────────────────────────────────────────────────── -->
   <section data-auto-animate>
     <h2 style="font-size:2em; margin-bottom:0.6em;"><span class="gradient-text">Start now.</span></h2>
