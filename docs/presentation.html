@@ -1352,6 +1352,68 @@ I have made the following progress...</code></pre>
   </section>
 
   <!-- ─────────────────────────────────────────────────────────────
+       SLIDE — Setup resources (links)
+  ───────────────────────────────────────────────────────────────── -->
+  <section data-auto-animate>
+    <h2>Setup: everything you need to get started</h2>
+    <p style="font-size:0.5em; color:var(--muted); margin-bottom:0.5em;">Click any link — all documentation is official and free.</p>
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:0.55rem;">
+
+      <div class="col-box" style="border-top:3px solid var(--accent); padding:0.55em 0.8em;">
+        <p style="font-size:0.6em; font-weight:700; margin:0 0 0.15em;">Git</p>
+        <p style="font-size:0.46em; color:var(--muted); margin:0 0 0.3em;">Version control — tracks every change to your thesis</p>
+        <a href="https://git-scm.com/downloads" style="font-size:0.48em; color:var(--accent);">git-scm.com/downloads</a> &nbsp;·&nbsp;
+        <a href="https://git-scm.com/book/en/v2" style="font-size:0.48em; color:var(--accent);">Pro Git book (free)</a>
+      </div>
+
+      <div class="col-box" style="border-top:3px solid var(--accent); padding:0.55em 0.8em;">
+        <p style="font-size:0.6em; font-weight:700; margin:0 0 0.15em;">GitHub CLI <code style="font-size:0.85em;">gh</code></p>
+        <p style="font-size:0.46em; color:var(--muted); margin:0 0 0.3em;">Manage repos and pull requests from the terminal</p>
+        <a href="https://cli.github.com/" style="font-size:0.48em; color:var(--accent);">cli.github.com</a> &nbsp;·&nbsp;
+        <a href="https://cli.github.com/manual/" style="font-size:0.48em; color:var(--accent);">Manual</a>
+      </div>
+
+      <div class="col-box" style="border-top:3px solid var(--green); padding:0.55em 0.8em;">
+        <p style="font-size:0.6em; font-weight:700; margin:0 0 0.15em;">Python — Anaconda</p>
+        <p style="font-size:0.46em; color:var(--muted); margin:0 0 0.3em;">Python distribution with data science packages pre-installed</p>
+        <a href="https://www.anaconda.com/download" style="font-size:0.48em; color:var(--accent);">anaconda.com/download</a> &nbsp;·&nbsp;
+        <a href="https://docs.anaconda.com/getting-started/" style="font-size:0.48em; color:var(--accent);">Getting started</a>
+      </div>
+
+      <div class="col-box" style="border-top:3px solid var(--green); padding:0.55em 0.8em;">
+        <p style="font-size:0.6em; font-weight:700; margin:0 0 0.15em;">VS Code</p>
+        <p style="font-size:0.46em; color:var(--muted); margin:0 0 0.3em;">Editor — Claude Code integrates directly as an extension</p>
+        <a href="https://code.visualstudio.com/" style="font-size:0.48em; color:var(--accent);">code.visualstudio.com</a> &nbsp;·&nbsp;
+        <a href="https://marketplace.visualstudio.com/items?itemName=anthropic.claude-code" style="font-size:0.48em; color:var(--accent);">Claude Code extension</a>
+      </div>
+
+      <div class="col-box" style="border-top:3px solid var(--accent2); padding:0.55em 0.8em;">
+        <p style="font-size:0.6em; font-weight:700; margin:0 0 0.15em;">Claude Code — install &amp; quickstart</p>
+        <p style="font-size:0.46em; color:var(--muted); margin:0 0 0.3em;"><code>npm install -g @anthropic-ai/claude-code</code> · then <code>claude .</code> in any folder</p>
+        <a href="https://docs.anthropic.com/en/docs/claude-code/quickstart" style="font-size:0.48em; color:var(--accent);">Quickstart guide</a> &nbsp;·&nbsp;
+        <a href="https://docs.anthropic.com/en/docs/claude-code/overview" style="font-size:0.48em; color:var(--accent);">Full docs</a>
+      </div>
+
+      <div class="col-box" style="border-top:3px solid var(--accent2); padding:0.55em 0.8em;">
+        <p style="font-size:0.6em; font-weight:700; margin:0 0 0.15em;">Anthropic API key</p>
+        <p style="font-size:0.46em; color:var(--muted); margin:0 0 0.3em;">Create a key at console.anthropic.com, then <code>export ANTHROPIC_API_KEY=sk-...</code></p>
+        <a href="https://console.anthropic.com/" style="font-size:0.48em; color:var(--accent);">console.anthropic.com</a> &nbsp;·&nbsp;
+        <a href="https://docs.anthropic.com/en/api/getting-started" style="font-size:0.48em; color:var(--accent);">API getting started</a>
+      </div>
+
+      <div class="col-box" style="border-top:3px solid var(--yellow); padding:0.55em 0.8em; grid-column:1 / -1;">
+        <p style="font-size:0.6em; font-weight:700; margin:0 0 0.15em;">Run Claude Code with a local LLM <span style="font-size:0.75em; color:var(--muted); font-weight:400;">(if API cost or privacy is a concern)</span></p>
+        <p style="font-size:0.46em; color:var(--muted); margin:0 0 0.3em;">Claude Code supports custom API endpoints — point it at Ollama, LM Studio, or any OpenAI-compatible server running locally.</p>
+        <a href="https://docs.anthropic.com/en/docs/claude-code/bedrock-vertex" style="font-size:0.48em; color:var(--accent);">Bedrock &amp; Vertex AI</a> &nbsp;·&nbsp;
+        <a href="https://docs.anthropic.com/en/docs/claude-code/settings#environment-variables" style="font-size:0.48em; color:var(--accent);">Custom endpoint (ANTHROPIC_BASE_URL)</a> &nbsp;·&nbsp;
+        <a href="https://ollama.com/" style="font-size:0.48em; color:var(--accent);">Ollama (run models locally)</a>
+      </div>
+
+    </div>
+    <aside class="notes">This is a reference slide — leave it on screen while students set up. The local LLM option is useful for students who have privacy concerns or want to avoid API costs, though quality will be lower than Claude.</aside>
+  </section>
+
+  <!-- ─────────────────────────────────────────────────────────────
        SLIDE 18 — Going deeper (was slide 11)
   ───────────────────────────────────────────────────────────────── -->
   <section data-auto-animate>
