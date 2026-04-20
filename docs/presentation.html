@@ -780,13 +780,13 @@ pandoc/          →  LaTeX template + metadata
     <h2>Day 1: <code>/interview</code> sets everything up</h2>
     <div class="first-day-grid">
       <div class="first-day-list">
-        <h3 style="font-size:0.7em; margin-bottom:0.6em;">The 9 questions</h3>
+        <h3 style="font-size:0.7em; margin-bottom:0.6em;">The questions</h3>
         <ol>
           <li>Full name and program</li>
           <li>University and department</li>
           <li>Supervisor name (optional)</li>
           <li>Thesis topic or working title</li>
-          <li>Core research question in your own words</li>
+          <li style="color:var(--accent); font-weight:500;">Core research question → <em>refinement loop</em></li>
           <li>Data you have or plan to use</li>
           <li>Methodology you expect to apply</li>
           <li>Programming experience: beginner / intermediate / advanced</li>
@@ -807,12 +807,16 @@ pandoc/          →  LaTeX template + metadata
           <div class="fdc-file">⚙️ CLAUDE.md</div>
           <div class="fdc-desc">Rewritten with your field, topic, and coding level</div>
         </div>
+        <div class="first-day-card" style="border-left-color: var(--accent2);">
+          <div class="fdc-file" style="color:var(--accent2);">🔁 Refinement loop on Q5</div>
+          <div class="fdc-desc">Claude critiques your RQ against 4 criteria and iterates until it's specific, answerable, and falsifiable</div>
+        </div>
       </div>
     </div>
     <div style="text-align:center; margin-top:0.8em;">
-      <span class="bottom-note">Run once. Every skill reads this forever.</span>
+      <span class="bottom-note">Run once. Every skill reads this forever. Your RQ comes out sharper.</span>
     </div>
-    <aside class="notes">The interview takes about five minutes. After it runs, every subsequent command is aware of the student's topic, data, and experience level — no repetition needed.</aside>
+    <aside class="notes">The interview now includes a research question refinement loop after Q5. Claude evaluates the RQ for specificity, answerability, contribution, and falsifiability, then offers a tighter version. Up to 3 rounds before moving on.</aside>
   </section>
 
   <!-- ─────────────────────────────────────────────────────────────

@@ -11,20 +11,36 @@ Use this skill when the student runs /interview for the first time (or wants to 
 
 - Ask questions one at a time. Wait for the student's answer before moving on.
 - Never skip a question or batch multiple questions together.
-- Accept vague or uncertain answers — the student may not know their methodology yet.
+- Accept vague or uncertain answers ï¿½ the student may not know their methodology yet.
 - At the end, write three files. Do not write any files until all questions are answered.
 
 ## Questions (ask in this order)
 
 1. "What is your full name and what program are you in? (e.g. Jane Smith, MSc Finance)"
 2. "What is the name of your university and department?"
-3. "Who is your thesis supervisor? (You can skip this if you don't have one yet — just say 'skip'.)"
-4. "What is your thesis topic or working title? It's fine if this is rough — we can refine it."
+3. "Who is your thesis supervisor? (You can skip this if you don't have one yet ï¿½ just say 'skip'.)"
+4. "What is your thesis topic or working title? It's fine if this is rough ï¿½ we can refine it."
 5. "What is the core research question you want to answer? Try to phrase it as a question."
+
+   After the student answers Q5, pause and help them refine the research question before continuing. Do this in up to 3 back-and-forth exchanges:
+
+   a. Evaluate the question against these criteria:
+      - Specific: does it name the variables, setting, or mechanism?
+      - Answerable: can it be addressed with the data and method they mentioned?
+      - Contribution: does it suggest a gap or add to existing knowledge?
+      - Falsifiable: can evidence push against it?
+
+   b. If the question is vague, too broad, or unfalsifiable, say so kindly and offer a sharper version. Example:
+      - Student says: "I want to study ESG and firm performance"
+      - You respond: "That is a good starting point. Here is a more focused version: Does ESG rating disagreement across providers predict abnormal stock returns in European markets, 2010-2023? This pins down the mechanism (disagreement), the outcome (returns), and the scope. Does this feel right, or would you like to adjust it?"
+
+   c. If the student is happy with a version, record that as their final research question and move on.
+   d. After 3 exchanges, accept whatever they have and move on.
+
 6. "What data do you have or plan to use? (e.g. Compustat, Bloomberg, hand-collected data, survey data)"
-7. "What methodology do you expect to use? (e.g. OLS regression, event study, difference-in-differences, qualitative analysis — anything is fine)"
+7. "What methodology do you expect to use? (e.g. OLS regression, event study, difference-in-differences, qualitative analysis ï¿½ anything is fine)"
 8. "How would you describe your Python experience? Choose one: beginner / intermediate / advanced"
-9. "Do you plan to use any programming language other than Python? (e.g. R, Stata, Julia — or say 'no')"
+9. "Do you plan to use any programming language other than Python? (e.g. R, Stata, Julia ï¿½ or say 'no')"
 
 ## After all questions are answered
 
@@ -36,10 +52,10 @@ Write the following three files using the student's answers.
 # Student Profile
 
 ## Personal
-- **Name:** [answer to Q1 — name only]
-- **Program:** [answer to Q1 — program]
-- **University:** [answer to Q2 — university]
-- **Department:** [answer to Q2 — department]
+- **Name:** [answer to Q1 ï¿½ name only]
+- **Program:** [answer to Q1 ï¿½ program]
+- **University:** [answer to Q2 ï¿½ university]
+- **Department:** [answer to Q2 ï¿½ department]
 - **Supervisor:** [answer to Q3, or "TBD"]
 
 ## Thesis
@@ -54,7 +70,7 @@ Write the following three files using the student's answers.
 
 ## Derived Profile
 - **Thesis Type:** [infer from Q7: empirical / theoretical / mixed / literature survey]
-- **Coding Guidance:** [based on Q8: if beginner — explain code in detail; if intermediate — explain key choices; if advanced — minimal explanation]
+- **Coding Guidance:** [based on Q8: if beginner ï¿½ explain code in detail; if intermediate ï¿½ explain key choices; if advanced ï¿½ minimal explanation]
 ```
 
 ### File 2: docs/proposal.md
@@ -69,7 +85,7 @@ Write the following three files using the student's answers.
 [answer to Q5]
 
 ## Motivation
-[Write 2–3 sentences explaining why this question matters, based on the student's topic and RQ. Do not invent facts — keep this general and prompt-based.]
+[Write 2ï¿½3 sentences explaining why this question matters, based on the student's topic and RQ. Do not invent facts ï¿½ keep this general and prompt-based.]
 
 ## Data Needed
 [answer to Q6]
@@ -78,10 +94,10 @@ Write the following three files using the student's answers.
 [answer to Q7]
 
 ## Expected Contribution
-[Write 1–2 sentences about what the thesis could contribute, phrased cautiously.]
+[Write 1ï¿½2 sentences about what the thesis could contribute, phrased cautiously.]
 
 ## Main Risks
-[Identify 2–3 honest risks based on the student's data and methodology choices.]
+[Identify 2ï¿½3 honest risks based on the student's data and methodology choices.]
 
 ## Next Steps
 1. Run /literature-review to map the relevant literature.
@@ -90,13 +106,13 @@ Write the following three files using the student's answers.
 4. Begin drafting thesis/02_literature_review.md.
 
 ## Supervisor Pitch
-[Write 3–4 sentences the student could send to a supervisor introducing their thesis idea. Cautious, professional tone.]
+[Write 3ï¿½4 sentences the student could send to a supervisor introducing their thesis idea. Cautious, professional tone.]
 ```
 
 ### File 3: CLAUDE.md (full rewrite)
 
 ```markdown
-# Thesis Copilot — [Student Name]
+# Thesis Copilot ï¿½ [Student Name]
 
 You are helping [Student Name] write their master's thesis.
 
@@ -129,16 +145,16 @@ You are helping [Student Name] write their master's thesis.
 
 ## Thesis structure
 
-1. Abstract — thesis/00_abstract.md
-2. Introduction — thesis/01_introduction.md
-3. Literature Review — thesis/02_literature_review.md
-4. Research Question — thesis/03_research_question.md
-5. Data — thesis/04_data.md
-6. Methodology — thesis/05_methodology.md
-7. Results — thesis/06_results.md
-8. Robustness Tests — thesis/07_robustness.md
-9. Discussion — thesis/08_discussion.md
-10. Conclusion — thesis/09_conclusion.md
+1. Abstract ï¿½ thesis/00_abstract.md
+2. Introduction ï¿½ thesis/01_introduction.md
+3. Literature Review ï¿½ thesis/02_literature_review.md
+4. Research Question ï¿½ thesis/03_research_question.md
+5. Data ï¿½ thesis/04_data.md
+6. Methodology ï¿½ thesis/05_methodology.md
+7. Results ï¿½ thesis/06_results.md
+8. Robustness Tests ï¿½ thesis/07_robustness.md
+9. Discussion ï¿½ thesis/08_discussion.md
+10. Conclusion ï¿½ thesis/09_conclusion.md
 
 ## Writing surface
 
