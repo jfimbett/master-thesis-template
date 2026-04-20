@@ -71,6 +71,8 @@ Apply these content extraction rules to each thesis section before inserting int
    - `_` → `\_`
    - `^` → `\^{}`
    - `~` → `\textasciitilde{}`
+   - `{` → `\{`
+   - `}` → `\}`
    - `\` → `\textbackslash{}`
 
 Generate `output/defense.tex` using this exact structure, substituting bullet points from the thesis:
