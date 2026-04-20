@@ -225,14 +225,14 @@
     }
 
     /* ── Contract / can-cannot ──────────────────────────────────── */
-    .contract-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 0.8rem; }
-    .contract-box { background: var(--bg2); border: 1px solid var(--border); border-radius: 12px; padding: 1.2em 1.4em; }
+    .contract-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.9rem; margin-top: 0.5rem; }
+    .contract-box { background: var(--bg2); border: 1px solid var(--border); border-radius: 12px; padding: 0.7em 1em; }
     .contract-box.yes { border-top: 4px solid var(--green); }
     .contract-box.no  { border-top: 4px solid var(--red); }
-    .contract-box h3  { font-size: 0.85em; margin-bottom: 0.5em; }
+    .contract-box h3  { font-size: 0.75em; margin-bottom: 0.35em; }
     .contract-box.yes h3 { color: var(--green); }
     .contract-box.no  h3 { color: var(--red); }
-    .contract-box ul li { font-size: 0.6em; color: var(--muted); padding: 0.25em 0; line-height: 1.4; }
+    .contract-box ul li { font-size: 0.56em; color: var(--muted); padding: 0.12em 0; line-height: 1.35; }
     .contract-box ul li::before { display: none; }
     .contract-box.yes ul li::before { content: "✓ "; color: var(--green); display: inline; }
     .contract-box.no  ul li::before { content: "✗ "; color: var(--red); display: inline; }
@@ -256,21 +256,21 @@
     .start-steps {
       display: inline-block;
       text-align: left;
-      margin: 0.5em auto;
+      margin: 0.3em auto;
     }
     .start-step {
       display: flex;
       align-items: center;
-      gap: 1em;
-      margin: 0.35em 0;
+      gap: 0.7em;
+      margin: 0.2em 0;
     }
     .step-num {
-      width: 30px; height: 30px;
+      width: 24px; height: 24px;
       background: var(--accent);
       color: var(--bg);
       border-radius: 50%;
       font-weight: 700;
-      font-size: 0.6em;
+      font-size: 0.52em;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -278,11 +278,11 @@
     }
     .step-cmd {
       font-family: 'Fira Code', monospace;
-      font-size: 0.65em;
+      font-size: 0.55em;
       color: var(--text);
       background: var(--bg3);
       border: 1px solid var(--border);
-      padding: 0.3em 0.8em;
+      padding: 0.25em 0.7em;
       border-radius: 6px;
     }
 
@@ -820,10 +820,10 @@ pandoc/          →  LaTeX template + metadata
   ───────────────────────────────────────────────────────────────── -->
   <section data-auto-animate>
     <h2>How <code>/write-section</code> actually works</h2>
-    <div class="cols three" style="margin-top:0.6em; gap:0.8rem; align-items:start;">
-      <div class="col-box" style="border-top:3px solid var(--accent);">
-        <h3 style="font-size:0.65em; margin-bottom:0.4em;">You provide</h3>
-        <pre style="margin:0; box-shadow:none;"><code class="language-plaintext" style="font-size:0.58em; line-height:1.5; padding:0.8em;">/write-section Introduction
+    <div class="cols three" style="margin-top:0.4em; gap:0.6rem; align-items:start;">
+      <div class="col-box" style="border-top:3px solid var(--accent); padding:0.6em 0.8em;">
+        <h3 style="font-size:0.6em; margin-bottom:0.3em;">You provide</h3>
+        <pre style="margin:0; box-shadow:none;"><code class="language-plaintext" style="font-size:0.52em; line-height:1.45; padding:0.6em;">/write-section Introduction
 
 - Topic: ESG ratings and
   stock returns
@@ -836,18 +836,18 @@ pandoc/          →  LaTeX template + metadata
 - Method: Fama-MacBeth
   regression</code></pre>
       </div>
-      <div class="col-box" style="border-top:3px solid var(--accent2);">
-        <h3 style="font-size:0.65em; margin-bottom:0.4em;">Claude reads</h3>
-        <ul style="margin-top:0.3em;">
-          <li style="font-size:0.56em; padding:0.25em 0;">Your student profile</li>
-          <li style="font-size:0.56em; padding:0.25em 0;">Your notes above</li>
-          <li style="font-size:0.56em; padding:0.25em 0;">Academic tone rules</li>
-          <li style="font-size:0.56em; padding:0.25em 0;">No invented citations</li>
+      <div class="col-box" style="border-top:3px solid var(--accent2); padding:0.6em 0.8em;">
+        <h3 style="font-size:0.6em; margin-bottom:0.3em;">Claude reads</h3>
+        <ul style="margin-top:0.2em;">
+          <li style="font-size:0.52em; padding:0.12em 0;">Your student profile</li>
+          <li style="font-size:0.52em; padding:0.12em 0;">Your notes above</li>
+          <li style="font-size:0.52em; padding:0.12em 0;">Academic tone rules</li>
+          <li style="font-size:0.52em; padding:0.12em 0;">No invented citations</li>
         </ul>
       </div>
-      <div class="col-box" style="border-top:3px solid var(--green);">
-        <h3 style="font-size:0.65em; margin-bottom:0.4em;">You get</h3>
-        <pre style="margin:0; box-shadow:none;"><code class="language-markdown" style="font-size:0.55em; line-height:1.5; padding:0.8em;">## Introduction
+      <div class="col-box" style="border-top:3px solid var(--green); padding:0.6em 0.8em;">
+        <h3 style="font-size:0.6em; margin-bottom:0.3em;">You get</h3>
+        <pre style="margin:0; box-shadow:none;"><code class="language-markdown" style="font-size:0.5em; line-height:1.45; padding:0.6em;">## Introduction
 
 The relationship between
 environmental, social, and
@@ -1361,49 +1361,49 @@ I have made the following progress...</code></pre>
 
       <div class="col-box" style="border-top:3px solid var(--accent); padding:0.55em 0.8em;">
         <p style="font-size:0.6em; font-weight:700; margin:0 0 0.15em;">Git</p>
-        <p style="font-size:0.46em; color:var(--muted); margin:0 0 0.3em;">Version control — tracks every change to your thesis</p>
+        <p style="font-size:0.46em; color:var(--muted); margin:0 0 0.15em;">Version control — tracks every change to your thesis</p>
         <a href="https://git-scm.com/downloads" style="font-size:0.48em; color:var(--accent);">git-scm.com/downloads</a> &nbsp;·&nbsp;
         <a href="https://git-scm.com/book/en/v2" style="font-size:0.48em; color:var(--accent);">Pro Git book (free)</a>
       </div>
 
       <div class="col-box" style="border-top:3px solid var(--accent); padding:0.55em 0.8em;">
         <p style="font-size:0.6em; font-weight:700; margin:0 0 0.15em;">GitHub CLI <code style="font-size:0.85em;">gh</code></p>
-        <p style="font-size:0.46em; color:var(--muted); margin:0 0 0.3em;">Manage repos and pull requests from the terminal</p>
+        <p style="font-size:0.46em; color:var(--muted); margin:0 0 0.15em;">Manage repos and pull requests from the terminal</p>
         <a href="https://cli.github.com/" style="font-size:0.48em; color:var(--accent);">cli.github.com</a> &nbsp;·&nbsp;
         <a href="https://cli.github.com/manual/" style="font-size:0.48em; color:var(--accent);">Manual</a>
       </div>
 
       <div class="col-box" style="border-top:3px solid var(--green); padding:0.55em 0.8em;">
         <p style="font-size:0.6em; font-weight:700; margin:0 0 0.15em;">Python — Anaconda</p>
-        <p style="font-size:0.46em; color:var(--muted); margin:0 0 0.3em;">Python distribution with data science packages pre-installed</p>
+        <p style="font-size:0.46em; color:var(--muted); margin:0 0 0.15em;">Python distribution with data science packages pre-installed</p>
         <a href="https://www.anaconda.com/download" style="font-size:0.48em; color:var(--accent);">anaconda.com/download</a> &nbsp;·&nbsp;
         <a href="https://docs.anaconda.com/getting-started/" style="font-size:0.48em; color:var(--accent);">Getting started</a>
       </div>
 
       <div class="col-box" style="border-top:3px solid var(--green); padding:0.55em 0.8em;">
         <p style="font-size:0.6em; font-weight:700; margin:0 0 0.15em;">VS Code</p>
-        <p style="font-size:0.46em; color:var(--muted); margin:0 0 0.3em;">Editor — Claude Code integrates directly as an extension</p>
+        <p style="font-size:0.46em; color:var(--muted); margin:0 0 0.15em;">Editor — Claude Code integrates directly as an extension</p>
         <a href="https://code.visualstudio.com/" style="font-size:0.48em; color:var(--accent);">code.visualstudio.com</a> &nbsp;·&nbsp;
         <a href="https://marketplace.visualstudio.com/items?itemName=anthropic.claude-code" style="font-size:0.48em; color:var(--accent);">Claude Code extension</a>
       </div>
 
       <div class="col-box" style="border-top:3px solid var(--accent2); padding:0.55em 0.8em;">
         <p style="font-size:0.6em; font-weight:700; margin:0 0 0.15em;">Claude Code — install &amp; quickstart</p>
-        <p style="font-size:0.46em; color:var(--muted); margin:0 0 0.3em;"><code>npm install -g @anthropic-ai/claude-code</code> · then <code>claude .</code> in any folder</p>
+        <p style="font-size:0.46em; color:var(--muted); margin:0 0 0.15em;"><code>npm install -g @anthropic-ai/claude-code</code> · then <code>claude .</code> in any folder</p>
         <a href="https://docs.anthropic.com/en/docs/claude-code/quickstart" style="font-size:0.48em; color:var(--accent);">Quickstart guide</a> &nbsp;·&nbsp;
         <a href="https://docs.anthropic.com/en/docs/claude-code/overview" style="font-size:0.48em; color:var(--accent);">Full docs</a>
       </div>
 
       <div class="col-box" style="border-top:3px solid var(--accent2); padding:0.55em 0.8em;">
         <p style="font-size:0.6em; font-weight:700; margin:0 0 0.15em;">Anthropic API key</p>
-        <p style="font-size:0.46em; color:var(--muted); margin:0 0 0.3em;">Create a key at console.anthropic.com, then <code>export ANTHROPIC_API_KEY=sk-...</code></p>
+        <p style="font-size:0.46em; color:var(--muted); margin:0 0 0.15em;">Create a key at console.anthropic.com, then <code>export ANTHROPIC_API_KEY=sk-...</code></p>
         <a href="https://console.anthropic.com/" style="font-size:0.48em; color:var(--accent);">console.anthropic.com</a> &nbsp;·&nbsp;
         <a href="https://docs.anthropic.com/en/api/getting-started" style="font-size:0.48em; color:var(--accent);">API getting started</a>
       </div>
 
       <div class="col-box" style="border-top:3px solid var(--yellow); padding:0.55em 0.8em; grid-column:1 / -1;">
         <p style="font-size:0.6em; font-weight:700; margin:0 0 0.15em;">Run Claude Code with a local LLM <span style="font-size:0.75em; color:var(--muted); font-weight:400;">(if API cost or privacy is a concern)</span></p>
-        <p style="font-size:0.46em; color:var(--muted); margin:0 0 0.3em;">Claude Code supports custom API endpoints — point it at Ollama, LM Studio, or any OpenAI-compatible server running locally.</p>
+        <p style="font-size:0.46em; color:var(--muted); margin:0 0 0.15em;">Claude Code supports custom API endpoints — point it at Ollama, LM Studio, or any OpenAI-compatible server running locally.</p>
         <a href="https://docs.anthropic.com/en/docs/claude-code/bedrock-vertex" style="font-size:0.48em; color:var(--accent);">Bedrock &amp; Vertex AI</a> &nbsp;·&nbsp;
         <a href="https://docs.anthropic.com/en/docs/claude-code/settings#environment-variables" style="font-size:0.48em; color:var(--accent);">Custom endpoint (ANTHROPIC_BASE_URL)</a> &nbsp;·&nbsp;
         <a href="https://ollama.com/" style="font-size:0.48em; color:var(--accent);">Ollama (run models locally)</a>
