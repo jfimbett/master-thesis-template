@@ -1071,9 +1071,32 @@ existing work tends to...</code></pre>
         </div>
       </div>
     </div>
-    <div style="text-align:center; margin-top:0.8em;">
-      <span class="bottom-note">You never configure these. They just work.</span>
+    <div style="margin-top:0.7em; display:grid; grid-template-columns:1fr 1.4fr; gap:0.7rem; align-items:start;">
+      <div class="col-box" style="border-top:3px solid var(--accent2); padding:0.5em 0.7em;">
+        <p style="font-size:0.54em; font-weight:700; color:var(--accent2); margin:0 0 0.2em;">You can write your own</p>
+        <p style="font-size:0.46em; color:var(--muted); line-height:1.5; margin:0 0 0.3em;">A hook is a Python script in <code>.claude/hooks/</code> declared in <code>.claude/settings.json</code>. It receives tool call data on stdin and can block, log, or notify.</p>
+        <p style="font-size:0.46em; color:var(--muted); line-height:1.5; margin:0;">Trigger events: <code>PreToolUse</code> · <code>PostToolUse</code> · <code>Stop</code> · <code>Notification</code></p>
+      </div>
+      <div>
+        <p style="font-size:0.44em; color:var(--muted); margin:0 0 0.2em;">Example — log word count after every thesis edit:</p>
+        <pre style="margin:0; box-shadow:none;"><code class="language-python" style="font-size:0.44em; line-height:1.45; padding:0.5em;"># .claude/hooks/word-count.py
+import sys, json, subprocess, datetime, pathlib
+
+data = json.load(sys.stdin)
+tool = data.get("tool_name", "")
+path = data.get("tool_input", {}).get("file_path", "")
+
+if tool in ("Write", "Edit") and "thesis/" in path:
+    result = subprocess.run(
+        ["wc", "-w"] + list(pathlib.Path("thesis").glob("*.md")),
+        capture_output=True, text=True
+    )
+    total = result.stdout.strip().split("\n")[-1]
+    with open(".claude/logs/word-count.log", "a") as f:
+        f.write(f"{datetime.datetime.now():%Y-%m-%d %H:%M}  {total}\n")</code></pre>
+      </div>
     </div>
+    <aside class="notes">Hooks are just Python scripts — any student comfortable with Python can write one. The word-count example is a good first hook: it's read-only, it gives useful feedback, and it teaches them how the hook receives tool data on stdin.</aside>
   </section>
 
   <!-- ─────────────────────────────────────────────────────────────
