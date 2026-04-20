@@ -534,7 +534,83 @@
   </section>
 
   <!-- ─────────────────────────────────────────────────────────────
-       SLIDE 3 — What is Claude Code?
+       SLIDE 3 — AI coding tools landscape
+  ───────────────────────────────────────────────────────────────── -->
+  <section data-auto-animate>
+    <h2>AI coding tools: the landscape</h2>
+    <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:0.8rem; margin-top:0.6em;">
+
+      <div class="col-box" style="border-top:4px solid var(--accent); text-align:left;">
+        <p style="font-family:'Fira Code',monospace; font-size:0.6em; color:var(--accent); font-weight:600; margin:0 0 0.3em;">Claude Code</p>
+        <p style="font-size:0.48em; color:var(--muted); margin:0 0 0.5em;">Anthropic · terminal / IDE</p>
+        <ul style="margin:0;">
+          <li style="font-size:0.52em; padding:0.2em 0;">Full project context (all files)</li>
+          <li style="font-size:0.52em; padding:0.2em 0;">Custom skills &amp; agents</li>
+          <li style="font-size:0.52em; padding:0.2em 0;">Runs code, edits files, compiles PDFs</li>
+          <li style="font-size:0.52em; padding:0.2em 0; color:var(--accent); font-weight:600;">← what we use</li>
+        </ul>
+      </div>
+
+      <div class="col-box" style="border-top:4px solid #6e40c9; text-align:left;">
+        <p style="font-family:'Fira Code',monospace; font-size:0.6em; color:#a371f7; font-weight:600; margin:0 0 0.3em;">GitHub Copilot</p>
+        <p style="font-size:0.48em; color:var(--muted); margin:0 0 0.5em;">GitHub / Microsoft · IDE plugin</p>
+        <ul style="margin:0;">
+          <li style="font-size:0.52em; padding:0.2em 0;">Inline code suggestions as you type</li>
+          <li style="font-size:0.52em; padding:0.2em 0;">Chat in VS Code / JetBrains</li>
+          <li style="font-size:0.52em; padding:0.2em 0;">Great for code completion</li>
+          <li style="font-size:0.52em; padding:0.2em 0; color:var(--muted);">Less suited to long documents</li>
+        </ul>
+      </div>
+
+      <div class="col-box" style="border-top:4px solid var(--green); text-align:left;">
+        <p style="font-family:'Fira Code',monospace; font-size:0.6em; color:var(--green); font-weight:600; margin:0 0 0.3em;">OpenAI Codex / ChatGPT</p>
+        <p style="font-size:0.48em; color:var(--muted); margin:0 0 0.5em;">OpenAI · web + API</p>
+        <ul style="margin:0;">
+          <li style="font-size:0.52em; padding:0.2em 0;">Conversational, broad knowledge</li>
+          <li style="font-size:0.52em; padding:0.2em 0;">Good for one-off questions</li>
+          <li style="font-size:0.52em; padding:0.2em 0;">No persistent project context</li>
+          <li style="font-size:0.52em; padding:0.2em 0; color:var(--muted);">Manual copy-paste workflow</li>
+        </ul>
+      </div>
+
+      <div class="col-box" style="border-top:4px solid var(--orange); text-align:left;">
+        <p style="font-family:'Fira Code',monospace; font-size:0.6em; color:var(--orange); font-weight:600; margin:0 0 0.3em;">Cursor</p>
+        <p style="font-size:0.48em; color:var(--muted); margin:0 0 0.5em;">Anysphere · VS Code fork</p>
+        <ul style="margin:0;">
+          <li style="font-size:0.52em; padding:0.2em 0;">AI-native IDE (VS Code base)</li>
+          <li style="font-size:0.52em; padding:0.2em 0;">Codebase-aware chat</li>
+          <li style="font-size:0.52em; padding:0.2em 0;">Strong for software projects</li>
+          <li style="font-size:0.52em; padding:0.2em 0; color:var(--muted);">No custom skill system</li>
+        </ul>
+      </div>
+
+      <div class="col-box" style="border-top:4px solid var(--yellow); text-align:left;">
+        <p style="font-family:'Fira Code',monospace; font-size:0.6em; color:var(--yellow); font-weight:600; margin:0 0 0.3em;">Gemini CLI</p>
+        <p style="font-size:0.48em; color:var(--muted); margin:0 0 0.5em;">Google · terminal</p>
+        <ul style="margin:0;">
+          <li style="font-size:0.52em; padding:0.2em 0;">1M-token context window</li>
+          <li style="font-size:0.52em; padding:0.2em 0;">Free tier available</li>
+          <li style="font-size:0.52em; padding:0.2em 0;">Similar agentic loop to CC</li>
+          <li style="font-size:0.52em; padding:0.2em 0; color:var(--muted);">Smaller ecosystem</li>
+        </ul>
+      </div>
+
+      <div class="col-box" style="border-top:4px solid var(--red); text-align:left;">
+        <p style="font-family:'Fira Code',monospace; font-size:0.6em; color:var(--red); font-weight:600; margin:0 0 0.3em;">Windsurf / Aider / etc.</p>
+        <p style="font-size:0.48em; color:var(--muted); margin:0 0 0.5em;">Various · IDE or terminal</p>
+        <ul style="margin:0;">
+          <li style="font-size:0.52em; padding:0.2em 0;">Growing fast, similar ideas</li>
+          <li style="font-size:0.52em; padding:0.2em 0;">Different UX, same core loop</li>
+          <li style="font-size:0.52em; padding:0.2em 0; color:var(--muted);">Skills transfer between tools</li>
+        </ul>
+      </div>
+
+    </div>
+    <aside class="notes">The tools are converging — they all work on the same principle: give the LLM your files and a loop to act on them. We chose Claude Code because the skill system lets us package the whole thesis workflow.</aside>
+  </section>
+
+  <!-- ─────────────────────────────────────────────────────────────
+       SLIDE 4 — What is Claude Code?
   ───────────────────────────────────────────────────────────────── -->
   <section data-auto-animate>
     <h2>Claude Code: AI that lives in your project</h2>
@@ -810,12 +886,12 @@ existing work tends to...</code></pre>
         <h3 style="font-size:0.72em; margin-bottom:0.3em;">Design your strategy</h3>
         <p style="font-family:'Fira Code',monospace; font-size:0.56em; color:var(--accent); margin:0 0 0.4em;">/empirical-design</p>
         <ul style="margin-top:0.2em;">
-          <li style="font-size:0.52em; padding:0.15em 0;">Defines your dependent + independent variables</li>
-          <li style="font-size:0.52em; padding:0.15em 0;">Writes your baseline regression in LaTeX</li>
-          <li style="font-size:0.52em; padding:0.15em 0;">Flags identification concerns</li>
-          <li style="font-size:0.52em; padding:0.15em 0;">Suggests robustness checks</li>
-          <li style="font-size:0.52em; padding:0.15em 0;">Produces expected tables and figures list</li>
-          <li style="font-size:0.52em; padding:0.15em 0;">Gives an interpretation guide</li>
+          <li style="font-size:0.52em; padding:0.04em 0;">Defines your dependent + independent variables</li>
+          <li style="font-size:0.52em; padding:0.04em 0;">Writes your baseline regression in LaTeX</li>
+          <li style="font-size:0.52em; padding:0.04em 0;">Flags identification concerns</li>
+          <li style="font-size:0.52em; padding:0.04em 0;">Suggests robustness checks</li>
+          <li style="font-size:0.52em; padding:0.04em 0;">Produces expected tables and figures list</li>
+          <li style="font-size:0.52em; padding:0.04em 0;">Gives an interpretation guide</li>
         </ul>
         <div style="margin-top:0.5em;">
           <span class="pill">Run before you touch any data</span>
@@ -825,11 +901,11 @@ existing work tends to...</code></pre>
         <h3 style="font-size:0.72em; margin-bottom:0.3em;">Understand your data</h3>
         <p style="font-family:'Fira Code',monospace; font-size:0.56em; color:var(--accent2); margin:0 0 0.4em;">/data-explorer</p>
         <ul style="margin-top:0.2em;">
-          <li style="font-size:0.52em; padding:0.15em 0;">Schema: column names, types, missing value counts</li>
-          <li style="font-size:0.52em; padding:0.15em 0;">Data quality flags: duplicates, outliers, implausible values</li>
-          <li style="font-size:0.52em; padding:0.15em 0;">Suggested summary statistics for thesis section</li>
-          <li style="font-size:0.52em; padding:0.15em 0;">Python code stub for your analysis script</li>
-          <li style="font-size:0.52em; padding:0.15em 0;">Connection to your research question</li>
+          <li style="font-size:0.52em; padding:0.04em 0;">Schema: column names, types, missing value counts</li>
+          <li style="font-size:0.52em; padding:0.04em 0;">Data quality flags: duplicates, outliers, implausible values</li>
+          <li style="font-size:0.52em; padding:0.04em 0;">Suggested summary statistics for thesis section</li>
+          <li style="font-size:0.52em; padding:0.04em 0;">Python code stub for your analysis script</li>
+          <li style="font-size:0.52em; padding:0.04em 0;">Connection to your research question</li>
         </ul>
         <div style="margin-top:0.4em;">
           <code style="font-size:0.52em;">/data-explorer data/clean/firm_panel.csv</code>
